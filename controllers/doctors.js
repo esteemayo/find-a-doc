@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
             if (doctors.length < 1) {
                 noMatch = 'No state match that query, please try again...';
             }
-            res.render('doctors', { doctors, noMatch });
+            res.render('doctors/doctors', { doctors, noMatch });
         } catch (err) {
             console.log(err);
             res.status(404).send({ msg: err });
@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
     } else {
         try {
             const doctors = await Doctor.find({});
-            res.render('doctors', { doctors, noMatch });
+            res.render('doctors/doctors', { doctors, noMatch });
         } catch (err) {
             console.log(err);
             res.status(404).send({ msg: err });

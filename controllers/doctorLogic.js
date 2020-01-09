@@ -5,9 +5,9 @@ module.exports = async (req, res) => {
 
     let new_patients;
     if (req.body.new_patients) {
-        new_patients = true;
+        new_patients = 'Yes';
     } else {
-        new_patients = false;
+        new_patients = 'No';
     }
 
     const doctor = new Doctor({

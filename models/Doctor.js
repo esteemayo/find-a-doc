@@ -22,7 +22,8 @@ const doctorSchema = new mongoose.Schema({
         required: true
     },
     new_patients: {
-        type: Boolean
+        type: String,
+        default: 'Yes'
     },
     grad_year: {
         type: Number,
