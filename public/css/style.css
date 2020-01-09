@@ -225,13 +225,20 @@ form div {
 }
 
 .success {
-  background-color: green;
+  background-color: lightgreen;
   color: #fff;
   border: 1px solid #fff;
 }
 
 .error {
-  background-color: red;
+  background-color: tomato;
   color: #fff;
   border: 1px solid #fff;
+}
+
+.noMatch {
+  color: tomato;
+  font-style: italic;
+  font-size: 20px;
+  text-align: center;
 }

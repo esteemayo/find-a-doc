@@ -1,4 +1,7 @@
 <h2>Browse Doctors</h2>
+{{#if noMatch}}
+<h3 class="noMatch">{{noMatch}}</h3>
+{{/if}}
 <ul class="docs">
     {{#each doctors}}
     <li>

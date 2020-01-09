@@ -1,10 +1,14 @@
 const Doctor = require('../models/Doctor');
 
 module.exports = async (req, res) => {
+    let noMatch = null;
     if (req.query.state) {
         try {
             const doctors = await Doctor.find({ state: req.query.state });
-            res.render('doctors', { doctors });
+            if (doctors.length < 1) {
+                noMatch = 'No state match that query, please try again...';
+            }
+            res.render('doctors', { doctors, noMatch });
         } catch (err) {
             console.log(err);
             res.status(404).send({ msg: err });
@@ -12,7 +16,7 @@ module.exports = async (req, res) => {
     } else {
         try {
             const doctors = await Doctor.find({});
-            res.render('doctors', { doctors });
+            res.render('doctors', { doctors, noMatch });
         } catch (err) {
             console.log(err);
             res.status(404).send({ msg: err });
