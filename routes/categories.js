@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../middleware/auth');
 
 // CONTROLLERS
 const categories = require('../controllers/categories');
@@ -10,9 +11,9 @@ const postCategory = require('../controllers/categoryLogic')
 router.get('/', categories);
 
 // GET ADD ROUTE
-router.get('/add', add);
+router.get('/add', auth, add);
 
 // POST ADD LOGIC
-router.post('/add', postCategory);
+router.post('/add', auth, postCategory);
 
 module.exports = router;

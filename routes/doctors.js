@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../middleware/auth');
 
 // CONTROLLERS
 const doctors = require('../controllers/doctors');
@@ -14,13 +15,13 @@ router.get('/', doctors);
 // GET DETAILS[SHOW] ROUTE
 router.get('/details/:id', details);
 
-// GET DOCTOR/CATEOGY NAME ROUTE
+// GET DOCTOR/CATEGORY NAME ROUTE
 router.get('/category/:name', category);
 
 // GET ADD ROUTE
-router.get('/add', add);
+router.get('/add', auth, add);
 
 // POST ADD LOGIC
-router.post('/add', logic);
+router.post('/add', auth, logic);
 
 module.exports = router;

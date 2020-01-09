@@ -217,3 +217,21 @@ form div {
 .btn-add {
   padding: 6px;
 }
+
+.container {
+  width: 80%;
+  padding: 20px;
+  color: #fff;
+}
+
+.success {
+  background-color: green;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.error {
+  background-color: red;
+  color: #fff;
+  border: 1px solid #fff;
+}

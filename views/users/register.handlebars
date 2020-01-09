@@ -1,0 +1,28 @@
+<h2>Register</h2>
+<br />
+<form action="/users/register" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{name}}" />
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" name="email" value="{{email}}" />
+    </div>
+
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" value="{{password}}" />
+    </div>
+
+    <div>
+        <label for="password2">Confirm Password:</label>
+        <input type="password" name="password2" value="{{password2}}" />
+    </div>
+
+    <div>
+        <input class="btn btn-category" type="submit" value="Register" />
+    </div>
+</form>
+<br />
