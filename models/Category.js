@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const categorySchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: [true, 'A category must have a name'],
+        unique: true
     }
 });
 
